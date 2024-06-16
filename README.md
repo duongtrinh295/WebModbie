@@ -6,3 +6,4 @@
 - ng biuld
 - ng intain
 - npm start
+- con chim
