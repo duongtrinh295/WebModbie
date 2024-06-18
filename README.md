@@ -4,6 +4,5 @@
 - Material
 ## How to configure and run
 - ng biuld
-- ng intain
+- npm install
 - npm start
-- con chim
