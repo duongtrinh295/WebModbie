@@ -1,29 +1,61 @@
-<div class="flex items-center flex-col pt-56 h-screen">
-    <div class="h-screen">
-      <h1 class="text-4xl text-center font-bold my-10">Welcome to
-        <span class="text-5xl text-green-800">MyApp</span>
-      </h1>
-  
-      <div class="flex flex-col items-center gap-5 justify-center">
-    
-          <h1 class="text-2xl">trang login</h1>
-        
-      </div>
-      
-      </div>
-      <a routerLink="/forget-password">Forgot Password?</a>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-      <a routerLink="/">
-        <button type="submit" 
-            class="w-full mt-4 border border-slate-200 rounded-md disabled:bg-purple-400 py-2 px-3 bg-purple-700 text-white font-bold">
-            Login
-        </button>
-      </a>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <div class="my-5">
-            <span class="text-slate-600">
-                Don't have an account?
-            </span>
-            <a class="text-purple-700" [routerLink]="['/register']">Register</a>
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <main class="flex items-center justify-center min-h-screen">
+        <!-- Main Content -->
+        <div class="flex flex-col w-full max-w-md p-6 bg-white shadow-md rounded-lg">
+            <div class="flex justify-center mb-6">
+                <a class="py-4 block"><img src="../assets/images/logos/logo-light.svg" alt="Logo" class="mx-auto" /></a>
+            </div>
+            <p class="mb-4 text-gray-400 text-sm text-center">welcome to Admin</p>
+            <!-- form -->
+            <form>
+                <!-- username -->
+                <div>
+                  <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">User name</label>
+                  <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="username" required />
+              </div>
+                <!-- password -->
+                <div class="my-6">
+                  <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                  <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="•••••••••" required />
+              </div> 
+                <!-- checkbox -->
+                <div class="flex justify-between items-center mb-6">
+                    <div class="flex items-center">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600" id="hs-default-checkbox" checked>
+                        <label for="hs-default-checkbox" class="ml-2 text-sm text-gray-500">Remember this Device</label>
+                    </div>
+                    <a routerLink="/forget-password" class="text-sm font-semibold text-blue-600 hover:text-blue-700">Forgot Password?</a>
+                </div>
+                <!-- button -->
+                <div class="mb-6">
+                    <a routerLink="/" class="w-full block text-center py-3 bg-blue-600 text-white rounded hover:bg-blue-700">Sign In</a>
+                </div>
+                <div class="flex justify-center items-center gap-2">
+                  <a routerLink="/register">
+                    <button class="text-sm font-semibold text-blue-600 hover:text-blue-700">
+                        Create an account
+                    </button>
+                  </a>
+                </div>
+            </form>
         </div>
-</div>
+    </main>
+</body>
+
+</html>
