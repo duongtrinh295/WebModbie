@@ -10,7 +10,13 @@ import { RouterLink } from '@angular/router';
 
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: [
+    './home.component.css',
+
+    '../../../assets/vendors/css/vendor.bundle.base.css',
+    '../../../assets/vendors/font-awesome/css/font-awesome.min.css',
+    '../../../assets/vendors/mdi/css/materialdesignicons.min.css',
+  ]
 })
 export class HomeComponent {
 
