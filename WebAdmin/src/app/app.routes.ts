@@ -8,6 +8,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
 import { UsersComponent } from './pages/users/users.component';
 import { ProductComponent } from './pages/product/product.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { UserFormComponent } from './pages/users/user-form/user-form.component';
 
 export const routes: Routes = [
     {
@@ -25,6 +26,14 @@ export const routes: Routes = [
             {
                 path:'',
                 component: DashboardComponent
+            },
+            {
+                path:'userform',
+                component: UserFormComponent
+            },
+            {
+                path:'userform/:id',
+                component: UserFormComponent
             },
         ]
     },
