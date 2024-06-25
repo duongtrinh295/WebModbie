@@ -1,17 +1,16 @@
-import { JsonPipe } from '@angular/common';
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common'; // Import CommonModule
 
 @Component({
   selector: 'app-user-form',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule],
+  imports: [RouterModule, ReactiveFormsModule, CommonModule], // Include CommonModule in imports
   templateUrl: './user-form.component.html',
-  styleUrl: './user-form.component.css'
+  styleUrls: ['./user-form.component.css']
 })
-export class UserFormComponent {
+export class UserFormComponent implements OnInit {
   form: FormGroup;
   isEdit = false;
 
@@ -30,7 +29,7 @@ export class UserFormComponent {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      const student = JSON.parse(params['student'] || null);
+      const student = params['student'] ? JSON.parse(params['student']) : null;
       if (student) {
         this.isEdit = true;
         this.form.patchValue(student);
