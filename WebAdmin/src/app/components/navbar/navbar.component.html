@@ -2,15 +2,17 @@
     <mat-toolbar color="primary" style="padding:10px 50px">
       <a routerLink="/">My App</a>
       <div class="w-full"></div> 
-      <div>
+
+      @if(isLoggedIn()){
+      <div *ngIf="fetchUserDetail && userDetail">
         <div class="flex gap-5 items-center">
           <a [matMenuTriggerFor]="menu" class="flex gap2 cursor-pointer items-center">
-            <div class="bg-red-400 text-white font-bold shadow-md rounded-full w-5 h-5 p-5 flex justify-center items-center">
-              T
+            <div class="bg-red-400 text-white font-bold shadow-md rounded-full w-5 h-5 p-5 flex justify-center items-center">         
+              {{ userDetail.userName[0].toUpperCase() }}
             </div>
             <div class=" flex flex-col">
               <h1 class="p-0 m-0 font-medium">
-                Trình
+                {{ userDetail.userName }}
               </h1>
             </div>
           </a>
@@ -21,7 +23,7 @@
                 View Profile
               </span>
             </button>
-            <button mat-menu-item routerLink="/login">
+            <button mat-menu-item (click)="logout()">
               <mat-icon>
                 logout
               </mat-icon>
@@ -36,9 +38,14 @@
               </span>
             </button>
           </mat-menu>
-          
+            <a mat-button routerLink="/roles">
+              <mat-icon>
+                settings
+              </mat-icon>
+              Role
+          </a>
         </div>
       </div>
-
+    }
     </mat-toolbar>
 </div>

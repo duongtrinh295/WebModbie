@@ -23,36 +23,49 @@
             </div>
             <p class="mb-4 text-gray-400 text-sm text-center">Register</p>
             <!-- form -->
-            <form>
-                <!-- email -->
+            <form [formGroup]="registerForm" (ngSubmit)="register()">
+                <!-- Email -->
                 <div class="my-6">
-                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email address</label>
-                    <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@company.com" required />
-                </div> 
-                <!-- username -->
-                <div>
-                  <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">User name</label>
-                  <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="username" required />
-              </div>
-                <!-- password -->
-                <div class="my-6">
-                  <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                  <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="•••••••••" required />
-              </div> 
-              <!-- confirm_password -->
-              <div class="my-6">
-                <label for="confirm_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm password</label>
-                <input type="password" id="confirm_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="•••••••••" required />
-            </div> 
-                <!-- button -->
-                <div class="mb-6">
-                    <a routerLink="/login" class="w-full block text-center py-3 bg-blue-600 text-white rounded hover:bg-blue-700">Register</a>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email address</label>
+                    <input type="email" id="email" formControlName="email" placeholder="john.doe@company.com"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                    <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched"
+                        class="text-red-600 text-sm mt-1">Please enter a valid email address</div>
                 </div>
-                <div class="my-4">
-                    <span class="text-slate-600">
-                    Already have an account?
-                    </span>
-                    <a href="" class="text-purple-700" [routerLink]="['/login']">Login</a>
+                <!-- Username -->
+                <div class="my-6">
+                    <label for="username" class="block mb-2 text-sm font-medium text-gray-900">Username</label>
+                    <input type="text" id="userName" formControlName="userName" placeholder="userName"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                </div>
+                <!-- Password -->
+                <div class="my-6">
+                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
+                    <input type="password" id="password" formControlName="password" placeholder="•••••••••"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                </div>
+                <!-- Confirm Password -->
+                <mat-form-field appearance="fill" class="w-full">
+                    <mat-label>Confirm Password</mat-label>
+                    <input formControlName="confirmPassword" matInput type="{{confirmPasswordHide ? 'password':'text'}}"
+                      placeholder="Confirm Password">
+                    <mat-icon matPrefix>lock</mat-icon>
+                    <mat-icon (click)="confirmPasswordHide = !confirmPasswordHide" matSuffix>{{confirmPasswordHide ?
+                      'visibility_off':'visibility'}}</mat-icon>
+                  </mat-form-field>
+            
+                <!-- Error Messages -->
+                <div *ngFor="let error of errors" class="bg-red-100 border mb-2 flex flex-col gap-2 border-red-400 text-red-400 px4 py4 rounded-md relative">
+                    <div class="text-xs p-2">{{ error.description }}</div>
+                </div>
+                <!-- Register Button -->
+                <div class="mb-6">
+                    <button type="submit" [disabled]="!registerForm.valid" class="w-full block text-center py-3 bg-blue-600 text-white rounded hover:bg-blue-700">Register</button>
+                </div>
+                
+                <div class="my-4 text-center">
+                    <span class="text-slate-600">Already have an account?</span>
+                    <a class="text-purple-700" routerLink="/login">Login</a>
                 </div>
             </form>
         </div>

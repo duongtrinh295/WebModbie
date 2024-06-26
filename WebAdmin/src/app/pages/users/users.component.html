@@ -1,4 +1,4 @@
-<!-- users.component.html -->
+<!-- src/app/users.component.html -->
 <div class="relative flex flex-col w-full h-full text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
   <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white rounded-none bg-clip-border">
     <div class="flex items-center justify-between gap-8 mb-8">
@@ -34,6 +34,14 @@
         <tr>
           <th class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
             <p class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              ID
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+              </svg>
+            </p>
+          </th>
+          <th class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
+            <p class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
               Member
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="w-4 h-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
@@ -42,7 +50,7 @@
           </th>
           <th class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
             <p class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
-              Function
+              Role
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="w-4 h-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
               </svg>
@@ -50,66 +58,38 @@
           </th>
           <th class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
             <p class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
-              Status
+              Edit
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="w-4 h-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
               </svg>
-            </p>
-          </th>
-          <th class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
-            <p class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
-              Employed
-              <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="w-4 h-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
-              </svg>
-            </p>
-          </th>
-          <th class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
-            <p class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
-              Actions
             </p>
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let student of students">
-          <td class="p-4 border-b border-blue-gray-50">
-            <div class="flex items-center gap-3">
-              <img src="{{student.imageUrl}}" alt="{{student.name}}" class="relative inline-block h-9 w-9 rounded-full object-cover object-center" />
-              <div class="flex flex-col">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  {{student.name}}
-                </p>
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
-                  {{student.email}}
-                </p>
-              </div>
-            </div>
-          </td>
-          <td class="p-4 border-b border-blue-gray-50">
-            <div class="flex flex-col">
-              <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                {{student.role}}
-              </p>
-              <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
-                {{student.position}}
-              </p>
-            </div>
-          </td>
-          <td class="p-4 border-b border-blue-gray-50">
-            <div class="w-max">
-              <div class="relative grid items-center px-2 py-1 font-sans text-xs font-bold uppercase rounded-md select-none whitespace-nowrap bg-blue-gray-500/20 text-blue-gray-900">
-                <span class="">{{student.status}}</span>
-              </div>
-            </div>
-          </td>
+        <tr *ngFor="let user of users; let i = index">
           <td class="p-4 border-b border-blue-gray-50">
             <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-              {{student.employedDate}}
+              {{i + 1}}
             </p>
           </td>
           <td class="p-4 border-b border-blue-gray-50">
-            <button (click)="editStudent(student)" 
+            <div class="flex items-center gap-3">
+              <div class="flex flex-col">
+                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                  {{user.userName}}
+                </p>
+                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900 opacity-70">
+                  {{user.email}}
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <!-- Placeholder for function -->
+          </td>
+          <td class="p-4 border-b border-blue-gray-50">
+            <button (click)="editUser(user)" 
               class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
               type="button">
               <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">

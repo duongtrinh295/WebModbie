@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink ,Router } from '@angular/router';
+import { UsersService } from '../../services/users.service';
+import { Observable } from 'rxjs';
+import { Users } from '../../interfaces/users';
 
 @Component({
   selector: 'app-users',
@@ -9,19 +12,26 @@ import { RouterLink ,Router } from '@angular/router';
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })
-export class UsersComponent {
-  students = [
-    { name: 'Alexa Liras', email: 'alexa@creative-tim.com', role: 'Programator', position: 'Developer', status: 'offline', employedDate: '23/04/18', imageUrl: 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg' },
-    // Add more students here
-  ];
+export class UsersComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  users: Users[] = [];
+  currentPage = 1; // Trang hiện tại, có thể được cập nhật trong ứng dụng của bạn
 
+  constructor(private router: Router,
+    private userService: UsersService
+  ) {}
+  ngOnInit(): void {
+    this.userService.getAllUsers(1).subscribe(data => {
+      this.users = data;
+    });
+  }
   onAddMember(): void {
     this.router.navigate(['/userform'], { queryParams: { student: null } });
   }
 
-  editStudent(student: any): void {
+  editUser(student: any): void {
     this.router.navigate(['/userform'], { queryParams: { student: JSON.stringify(student) } });
   }
+ 
+
 }
