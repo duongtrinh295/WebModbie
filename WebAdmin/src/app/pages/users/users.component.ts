@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
-import { RouterLink ,Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterLink, Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
-import { Observable } from 'rxjs';
 import { Users } from '../../interfaces/users';
 
 @Component({
@@ -10,28 +9,29 @@ import { Users } from '../../interfaces/users';
   standalone: true,
   imports: [RouterLink, CommonModule],
   templateUrl: './users.component.html',
-  styleUrl: './users.component.css'
+  styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
 
   users: Users[] = [];
-  currentPage = 1; // Trang hiện tại, có thể được cập nhật trong ứng dụng của bạn
+  currentPage = 1;
 
-  constructor(private router: Router,
+  constructor(
+    private router: Router,
     private userService: UsersService
   ) {}
+
   ngOnInit(): void {
-    this.userService.getAllUsers(1).subscribe(data => {
+    this.userService.getAllUsers(this.currentPage).subscribe(data => {
       this.users = data;
     });
   }
+
   onAddMember(): void {
-    this.router.navigate(['/userform'], { queryParams: { student: null } });
+    this.router.navigate(['/userform'], { queryParams: { user: null } });
   }
 
-  editUser(student: any): void {
-    this.router.navigate(['/userform'], { queryParams: { student: JSON.stringify(student) } });
+  editUser(user: Users): void {
+    this.router.navigate(['/userform'], { queryParams: { user: JSON.stringify(user) } });
   }
- 
-
 }

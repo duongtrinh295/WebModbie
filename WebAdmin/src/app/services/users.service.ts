@@ -16,4 +16,13 @@ export class UsersService {
       map(response => response.data)
     );
   }
+
+  editUser(user: Users): Observable<Users> {
+    return this.http.put<Users>(`${this.apiUrl}user/edit/${user.userId}`, {
+      userName: user.userName,
+      email: user.email,
+      password: user.password
+    });
+  }
+
 }
