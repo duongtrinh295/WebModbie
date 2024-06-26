@@ -9,6 +9,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { ProductComponent } from './pages/product/product.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UserFormComponent } from './pages/users/user-form/user-form.component';
+import { RoleComponent } from './pages/role/role.component';
 
 export const routes: Routes = [
     {
@@ -34,6 +35,10 @@ export const routes: Routes = [
             {
                 path:'userform/:id',
                 component: UserFormComponent
+            },
+            {
+                path:'roles',
+                component: RoleComponent
             },
         ]
     },

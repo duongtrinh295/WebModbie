@@ -1,0 +1,28 @@
+<div class="md:mx-96 my-40 rounded-md p-3">
+    <h1 class="text-2xl font-semibold">Role Management</h1>
+    <hr class="my-3">
+  
+    <form [formGroup]="roleForm" (ngSubmit)="createRole()">
+      <div class="flex w-full gap-3">
+        <div class="w-1/2">
+          <div class="p-5 my-3">
+            <h1 class="font-medium">Create Role</h1>
+            <mat-form-field class="w-full">
+              <mat-label>Role Name</mat-label>
+              <input matInput formControlName="roleName" placeholder="Role Name" required>
+              <mat-error *ngIf="roleForm.get('roleName').hasError('required') && roleForm.get('roleName').touched">
+                Role Name is Required.
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-full">
+              <mat-label>Role Code</mat-label>
+              <input matInput formControlName="roleCode" placeholder="Role Code" >
+            </mat-form-field>
+            <span class="text-base text-red-500">{{ errorMessage }}</span>
+            <button type="submit" [disabled]="roleForm.invalid" class="bg-purple-600 px-4 disabled:bg-purple-400 rounded-md text-white py-2 m-2">Add</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  
