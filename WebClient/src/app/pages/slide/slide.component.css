@@ -1,0 +1,12 @@
+body, html {
+    height: 100%;
+  }
+  
+  .size_Slide {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    /* align-items: center;    Căn giữa theo chiều dọc */
+    width: 900px;
+    height: 300px;         /* Chiều cao 100% màn hình */
+    margin: 0 auto 0 auto;
+  }

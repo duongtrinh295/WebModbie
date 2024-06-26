@@ -4,6 +4,7 @@ import { RouterLink, RouterOutlet} from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { ProductBoxComponent } from '../product-box/product-box.component';
 import { HeaderComponent } from '../header/header.component';
+import { SlideComponent } from '../slide/slide.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -12,7 +13,8 @@ import { HeaderComponent } from '../header/header.component';
     MatButtonModule,
     LoginComponent,
     ProductBoxComponent,
-    HeaderComponent
+    HeaderComponent,
+    SlideComponent
   
   ],
   templateUrl: './home.component.html',
