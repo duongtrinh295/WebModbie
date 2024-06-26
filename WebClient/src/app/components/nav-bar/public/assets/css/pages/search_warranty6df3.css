@@ -1,0 +1,447 @@
+.search-warranty {
+    clear: both;
+    padding-top: 15px;
+}
+.search-warranty-content__title {
+    width: 100%;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+.v2-search-success {
+    margin: 10px 0;
+}
+.v2-success-title {
+    font-size: 18px;
+}
+.search-warranty-content__detail {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+/*left*/
+.search-warranty-content__detail .warranty-detail {
+    width: calc((100% - 20px)/4);
+    margin-right: 10px;
+}
+.warranty-detail__image {
+    width: 100%;
+}
+.warranty-detail__image .warranty-detail__image--product {
+    width: 100%;
+    object-fit: cover;
+}
+.warranty-detail__name {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin: 10px 0;
+}
+.warranty-detail__name .warranty-detail__name--product {
+    font-size: 16px;
+}
+.v2-banner-search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.v2-banner-search .image {
+    width: 310px;
+}
+.bold {
+    font-weight: 700;
+}
+/*right*/
+.search-warranty-content__detail .warranty-information {
+    width: calc((100% - 20px)*3/4);
+    background: #fff;
+    box-shadow: 0px 1px 8px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+    padding: 15px;
+}
+.warranty-information .invoice-item {
+    padding: 15px 0;
+}
+.invoice-item #v2-item-header {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.v2-item-header__left {
+    width: 70%;
+}
+.location-left {
+    margin-top: 10px;
+}
+#v2-item-header #v2-item-title {
+    width: 30%;
+    text-align: right;
+}
+#v2-item-title #v2-item-name {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #c69a39;
+}
+#v2-item-title .location-left {
+    font-size: 14px;
+}
+#v2-item-title #v2-item-title-info {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #888;
+}
+#v2-item-customer {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 20px;
+}
+#v2-item-customer #v2-item-customer-name {
+    display: flex;
+    flex: 0 0 50%;
+}
+.cus-name {
+    flex: 0 0 100px;
+}
+#v2-item-customer-name .cus-value {
+    border-bottom: 1px dotted #222;
+    color: #222;
+    flex: 0 0 calc(100% - 100px);
+}
+#v2-item-customer #v2-item-customer-phone {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 50%;
+}
+#v2-item-customer-phone .cus-value {
+    border-bottom: 1px dotted #222;
+    color: #222;
+    flex: 0 0 calc(100% - 100px);
+}
+#v2-item-customer #v2-item-customer-address {
+    flex: 0 0 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#v2-item-customer-address .cus-name {
+    flex: 0 0 100px;
+}
+#v2-item-customer-address .cus-value {
+    flex: 0 0 calc(100% - 100px);
+    border-bottom: 1px dotted #222;
+    color: #222;
+}
+
+#v2-item-table {
+    margin: 15px 0;
+}
+#v2-item-table-invoice {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+#v2-item-table-invoice tr,th,td {
+    padding: 0px 2px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #c69a39;
+    border-bottom-color: #ddd;
+    font-size: 14px;
+}
+#v2-item-table-invoice th {
+    background: #ede0c1;
+    border: 1px solid #c69a39;
+}
+#v2-item-note {
+    display: flex;
+    margin-bottom: 15px;
+}
+#v2-item-note .note-text {
+    margin-left: 15px;
+}
+#v2-item-sign {
+    display: flex;
+    flex-wrap: wrap;
+}
+.item-sign {
+    flex: 0 0 calc(100%/3);
+    text-align: center;
+    padding-bottom: 50px;
+}
+.item-sign .sign-1 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.item-sign .sign-2 {
+    font-size: 14px;
+}
+.item-sign .sign-3 {
+    margin-top: 45px;
+}
+
+
+.v2-history-title {
+    line-height: 22px;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+.v2-history-title .v2-detail {
+    flex: 0 0 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.v2-history-title .v2-detail .item {
+    flex: 0 0 100%;
+    padding-left: 10px;
+}
+.text-left {
+    text-align: left!important;
+}
+.invoice-list #v2-item-table {
+    margin: 0;
+    overflow-y: auto;
+}
+.redirect-detail {
+    color: blue;
+    text-decoration: underline;
+}
+.invoice-list {
+    border-bottom: 1px solid #c69a39;
+}
+.a5-customer-interests {
+    width: 100%;
+    margin-top: 50px;
+    float: left;
+}
+.a5-customer-interests .title {
+    line-height: 22px;
+    padding-left: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #c69a39;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+.a5-customer-interests .main {
+    margin-top: 15px;
+    border: 1px solid #c69a39;
+    border-bottom: none;
+}
+.a5-customer-interests .box {
+    border-top: 1px solid #c69a39;
+}
+.a5-customer-interests .main__service--title {
+    font-size: 14px!important;
+    background: #ede0c1;
+    margin: 0;
+    width: auto;
+    padding: 2px 0;
+}
+.a5-customer-interests .main-service--list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.a5-customer-interests .item {
+    width: calc((100%)/6);
+    border-right: 1px solid #ccc;
+    padding: 10px 0px;
+}
+.a5-customer-interests .item:last-child {
+    border-right: none;
+}
+.item__number {
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+    font-size: 30px;
+    color: #c69a39;
+    font-weight: bold;
+    border: 2px solid #c69a39;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.item__text {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 0 8px;
+    line-height: 20px;
+    font-weight: 600;
+}
+.interest {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 14px;
+}
+.interest .w-50 {
+    width: 50%;
+}
+.interest tr:last-child td {
+    border-bottom: 1px solid #c69a39;
+}
+.interest th {
+    padding: 0px 2px;
+    height: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    border: 1px solid #c69a39;
+    white-space: nowrap;
+    text-align: center;
+    padding: 3px;
+}
+.interest td {
+    padding: 0px 2px;
+    height: 18px;
+    line-height: 18px;
+    border: 1px solid #c69a39;
+    border-bottom-color: #ddd;
+}
+.interest td li {
+    padding: 5px;
+}
+.text-center {
+    text-align: center;
+}
+.color-primary {
+    color: #c69a39;
+}
+.interest__title {
+    font-size: 14px!important;
+    text-transform: uppercase;
+    color: #c69a39;
+}
+.a5-customer-interests .note {
+    font-size: 14px;
+    line-height: 18px;
+    margin: 15px 0;
+    font-weight: 700;
+}
+.stores {
+    background: #c69a39;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 0px;
+    position: relative;
+    font-size: 12px;
+}
+.stores .title {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff!important;
+    font-size: 14px;
+    text-align: left;
+    width: 100%;
+}
+.stores .hanoi {
+    width: calc((100%)/12*6);
+    border-right:  1px solid #fff;
+}
+.stores .hcm {
+    width: calc((100%) /12*4);
+    border-right:  1px solid #fff;
+    padding: 0 5px;
+}
+.stores .dn {
+    width: calc((100%) /12*2);
+    padding: 0 5px;
+}
+.store-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.hanoi .store {
+    width: calc((100%)/3);
+    padding: 0 3px;
+}
+.hcm .store {
+    width: calc((100% )/2);
+    padding: 0 3px;
+}
+.dn .store {
+    width: calc(100%);
+    padding: 0 3px;
+}
+
+.viewmore {
+    display: none;
+}
+@media only screen and (min-width: 1200px) {}
+
+@media only screen and (max-width: 1199px) {}
+
+@media only screen and (max-width: 991px) {
+    .search-warranty {
+        padding: 15px 10px 0 10px;
+    }
+    .warranty-detail {
+        width: 100%;
+        flex: 0 0 100%;
+        margin-right: 0;
+    }
+    .warranty-information {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+}
+@media only screen and (max-width: 576px) {
+    #v2-item-customer #v2-item-customer-name, #v2-item-customer-phone {
+        flex: 0 0 100%!important;
+    }
+    .invoice-item #v2-item-table {
+        overflow-y: auto;
+    }
+    #v2-item-table #v2-item-table-invoice {
+        width: 526px;
+    }
+    #v2-item-note {
+        font-size: 13px;
+    }
+    .item-sign .sign-1 {
+        font-size: 13px;
+    }
+    .item-sign .sign-2 {
+        font-size: 10px;
+    }
+    .v2-item-header__left {
+        width: 100%;
+    }
+    #v2-item-header #v2-item-title {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+    #v2-item-note {
+        flex-wrap: wrap;
+    }
+    #v2-item-note .note-text {
+        margin: 5px 0 0 0;
+        line-height: 16px;
+    }
+    .a5-customer-interests .title {
+        width: 100%;
+    }
+    .a5-customer-interests {
+        overflow-y: auto;
+    }
+    .a5-customer-interests .main, .interest, .stores {
+        min-width: 1140px;
+    }
+}
+
+@media only screen and (max-width: 479px) {}
+
+@media only screen and (max-width: 319px) {}
