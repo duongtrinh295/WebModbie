@@ -1,60 +1,26 @@
-<!DOCTYPE html>
-<html class=" js csstransforms3d" lang="vi" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="https://ogp.me/ns#"
-  xmlns="https://www.w3.org/1999/xhtml">
+<div class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email">
+      <mat-error *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        Valid email is required
+      </mat-error>
+    </mat-form-field>
 
-<head>
-  <title>Login</title>
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+        Password is required
+      </mat-error>
+    </mat-form-field>
 
-</head>
-
-<body>
-  <div class="mp-pusher" id="mp-pusher">
-    <div class="container clearfix">
-      <div class="breadcrumb">
-        <ul itemtype="https://schema.org/BreadcrumbList" itemscope="">
-
-          <li itemtype="https://schema.org/ListItem" itemscope="" itemprop="itemListElement">
-            <a routerLink="/" itemprop="item">
-              <span data-gtm-vis-recent-on-screen99115113_26="1205" data-gtm-vis-first-on-screen99115113_26="1205"
-                data-gtm-vis-total-visible-time99115113_26="9900" itemprop="name"
-                data-gtm-vis-has-fired99115113_26="1">Đăng nhập</span>
-            </a>
-            <meta content="2" itemprop="position">
-          </li>
-        </ul>
-      </div>
-      <div class="v2-login-area">
-        <form class="form-signin" action="#" method="post">
-          <input name="_token" type="hidden" value="IA0CQLqz5TlkYGBiXBcr24ZL2sEjEUHx9nP3YQV0">
-          <div class="form-signin-heading text-center">
-            <a routerLink="/"><h1 class="sign-title">MobileCity</h1></a>
-          </div>
-          <div class="v2-login-wrap">
-            <input name="login" class="form-control" autofocus="" required="" type="text"
-              placeholder="Tên đăng nhập/Email/Số điện thoại" value="">
-            <input name="password" class="form-control" id="password" required="" type="password"
-              placeholder="Mật khẩu">
-            <button class="btn btn-lg btn-login" type="submit">Đăng nhập</button>
-          </div>
-
-          <div class="v2-login-bottom">
-            <span class="v2-left" data-gtm-vis-recent-on-screen99115113_26="1205"
-              data-gtm-vis-first-on-screen99115113_26="1205" data-gtm-vis-total-visible-time99115113_26="9900"
-              data-gtm-vis-has-fired99115113_26="1"><span class="v2-hide"
-                data-gtm-vis-recent-on-screen99115113_26="1205" data-gtm-vis-first-on-screen99115113_26="1205"
-                data-gtm-vis-total-visible-time99115113_26="9900" data-gtm-vis-has-fired99115113_26="1">Chưa có tài
-                khoản</span><a class="v2-register-now" routerLink="/register"> ( Đăng ký ngay )</a>
-            </span>
-            <span class="v2-right" data-gtm-vis-recent-on-screen99115113_26="1205"
-              data-gtm-vis-first-on-screen99115113_26="1205" data-gtm-vis-total-visible-time99115113_26="9900"
-              data-gtm-vis-has-fired99115113_26="1">
-              <!-- <a class="v2-remember-password" href="https://mobilecity.vn/quen-mat-khau"> Quên mật khẩu ?</a> -->
-            </span>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</body>
-
-</html>
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Login</button>
+  </form>
+  <a routerLink="/register">Don't have an account? Register here</a>
+</div>
