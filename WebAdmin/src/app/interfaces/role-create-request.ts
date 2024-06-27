@@ -1,4 +1,4 @@
 export interface RoleCreateRequest {
-    roleName: string;
+    nameRole: string;
     roleCode: string;
 }

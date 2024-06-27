@@ -11,9 +11,17 @@ export class UsersService {
   apiUrl: string = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
+
   getAllUsers(page: number): Observable<Users[]> {
     return this.http.get<{ data: Users[] }>(`${this.apiUrl}user/all?page=${page}`).pipe(
       map(response => response.data)
     );
   }
+
+  getAllUsersRole(page: number): Observable<Users[]> {
+    return this.http.get<{ data: Users[] }>(`${this.apiUrl}user/all?page=${page}`).pipe(
+      map(response => response.data)
+    );
+  }
+
 }

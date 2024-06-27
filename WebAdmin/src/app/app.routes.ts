@@ -29,16 +29,16 @@ export const routes: Routes = [
                 component: DashboardComponent
             },
             {
+                path:'roles',
+                component: RoleComponent
+            },
+            {
                 path:'userform',
                 component: UserFormComponent
             },
             {
                 path:'userform/:id',
                 component: UserFormComponent
-            },
-            {
-                path:'roles',
-                component: RoleComponent
             },
         ]
     },

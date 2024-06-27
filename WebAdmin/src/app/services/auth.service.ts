@@ -42,23 +42,6 @@ export class AuthService {
     return this.http.post<AuthResponse>(`${this.apiUrl}auth/register`, data);
   }
 
-  getDetail = (): Observable<UserDetail> =>
-    this.http.get<UserDetail>(`${this.apiUrl}auth/me`);
-
-  // getUserDetail = () => {
-  //   const token = this.getToken();
-  //   if (!token) return null;
-  //   const decodedToken: any = jwtDecode(token);
-  //   const userDetail = {
-  //     userid: decodedToken.id,
-  //     userName: decodedToken.userName,
-  //     email: decodedToken.email,
-  //     // roles: decodedToken.role || [],
-  //   };
-
-  //   return userDetail;
-  // };
-
   getUserInfo(): Observable<Users> {
     const token = this.getToken();
     if (!token) {
