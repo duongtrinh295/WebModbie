@@ -10,6 +10,10 @@ import { ProductComponent } from './pages/product/product.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UserFormComponent } from './pages/users/user-form/user-form.component';
 import { RoleComponent } from './pages/role/role.component';
+import { ProductTypeComponent } from './pages/product-type/product-type.component';
+import { ProductTypeDeleteComponent } from './pages/product-type/product-type-delete/product-type-delete.component';
+import { ProductTypeEditComponent } from './pages/product-type/product-type-edit/product-type-edit.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 export const routes: Routes = [
     {
@@ -40,7 +44,24 @@ export const routes: Routes = [
                 path:'userform/:id',
                 component: UserFormComponent
             },
+            {
+                path:'product-type',
+                component: ProductTypeComponent
+            },
+            {
+                path:'product-type-delete/:id',
+                component: ProductTypeDeleteComponent
+            },
+            {
+                path:'product-type-edit/:id',
+                component: ProductTypeEditComponent
+            },
+            {
+                path:'category',
+                component: CategoryComponent
+            },
         ]
+
     },
     {
         path: 'login',

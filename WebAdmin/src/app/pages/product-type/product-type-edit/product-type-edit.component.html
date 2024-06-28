@@ -1,0 +1,16 @@
+<div class="p-5 my-3">
+    <h1 class="font-medium">Edit Product Type</h1>
+    <form [formGroup]="editForm" (ngSubmit)="editProductType()">
+      <div class="mb-4">
+        <div>
+            <label for="tag" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tag</label>
+            <input type="text" id="tag" formControlName="tag" class="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Sản phẩm cần sửa" required />
+        </div>
+      </div>
+      <div class="flex gap-5">
+        <button type="submit" class="bg-blue-600 text-white rounded-md px-4 py-2" [disabled]="editForm.invalid">Save</button>
+        <button type="button" class="bg-gray-300 text-black rounded-md px-4 py-2" (click)="cancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  

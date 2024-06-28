@@ -114,7 +114,7 @@ export class RoleComponent implements OnInit {
     this.roleService.assignRole(this.selectedUser, this.selectedRole)
     .subscribe({
       next: (response) =>{
-        this.roles$ = this.roleService.getAllRoles();
+        this.roleUser$ = this.roleService.getAllUserRoles();
         this.snackBar.open('Role Assign Successfully', 'Close',{
           duration: 3000,
         });
