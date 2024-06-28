@@ -5,6 +5,20 @@
     outline: 0;
 }
 
+.product-list-item {
+    width: calc(100% / 5);
+    float: left;
+    border: 1px solid #ebecec;
+    position: relative;
+    padding: 10px;
+    max-height: 440px;
+}
+
+.product-list {
+    float: left;
+    width: 100%;
+}
+
 .product-box {
     float: left;
     width: 100%;
@@ -24,8 +38,7 @@
     position: relative;
 }
 
-.mp-level,
-.mp-pusher {
+.mp-level, .mp-pusher {
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     transition: all .5s;
@@ -38,23 +51,7 @@
     z-index: 9999;
 }
 
-.mp-pusher {
-    position: relative;
-    left: 0px;
-    height: 100%;
-    z-index: 9999;
-}
-
-.mp-level,
-.mp-pusher {
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    transition: all .5s;
-}
-
-.mp-level::after,
-.mp-level::before,
-.mp-pusher::after {
+.mp-level::after, .mp-level::before, .mp-pusher::after {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -64,9 +61,8 @@
     opacity: 0;
 }
 
-.mp-level::after,
-.mp-pusher::after {
-    background: rgba(0, 0, 0, .3);
+.mp-level::after, .mp-pusher::after {
+    background: rgba(0,0,0,.3);
     -webkit-transition: opacity .3s, width .1s .3s, height .1s .3s;
     -moz-transition: opacity .3s, width .1s .3s, height .1s .3s;
     transition: opacity .3s, width .1s .3s, height .1s .3s;
@@ -81,54 +77,6 @@ body {
 
 body {
     position: relative;
-}
-
-.product-box .product-box-top {
-    float: left;
-    width: 100%;
-    margin-top: 10px;
-    position: relative;
-}
-
-.product-list {
-    float: left;
-    width: 100%;
-}
-
-.viewmore {
-    float: left;
-    width: 100%;
-    margin-top: 15px;
-}
-
-a {
-    text-decoration: none;
-    color: #000;
-}
-
-.viewmore .more {
-    display: block;
-    width: 300px;
-    text-align: center;
-    color: #c69a39;
-    border-radius: 5px;
-    padding: 8px 0;
-    transition: .5s all ease;
-    margin: 0 auto;
-    border: 1px solid #c69a39;
-    box-sizing: border-box;
-    font-size: 18px;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.product-list-item {
-    width: calc(100% /5);
-    float: left;
-    border: 1px solid #ebecec;
-    position: relative;
-    padding: 10px;
-    max-height: 440px;
 }
 
 .product-list-item .product-item-image {
@@ -171,8 +119,7 @@ ul {
     list-style: none;
 }
 
-.product-item-full-width ul li:nth-child(1),
-.product-item-full-width ul li:nth-child(2) {
+.product-item-full-width ul li:nth-child(1), .product-item-full-width ul li:nth-child(2) {
     display: block !important;
 }
 
@@ -192,6 +139,11 @@ ul {
 .product-list-item .product-item-info .product-item-full-width li::before {
     color: #818181;
     margin: 0 5px 0 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
 }
 
 .product-list-item .product-item-info .product-item-full-width span {
@@ -214,9 +166,9 @@ ul {
     text-transform: uppercase;
     display: block;
     background: #fa9308;
-    background: -moz-linear-gradient(top, #fa9308 0, #fa6f1c 100%);
-    background: -webkit-linear-gradient(top, #fa9308 0, #fa6f1c 100%);
-    background: linear-gradient(to bottom, #fa9308 0, #fa6f1c 100%);
+    background: -moz-linear-gradient(top,#fa9308 0,#fa6f1c 100%);
+    background: -webkit-linear-gradient(top,#fa9308 0,#fa6f1c 100%);
+    background: linear-gradient(to bottom,#fa9308 0,#fa6f1c 100%);
 }
 
 .product-list-item .product-item-info .product-item-left .name {
@@ -255,7 +207,7 @@ ul {
 
 .product-list-item .product-item-image .mask {
     position: absolute;
-    background: rgba(255, 255, 255, .95);
+    background: rgba(255,255,255,.95);
     color: #555;
     width: 100%;
     height: 100%;
@@ -315,7 +267,7 @@ ul {
     height: 40px;
     width: 40px;
     float: left;
-    /* background: #c69a39 url(../../img/icon-mobilecity-care.png) no-repeat center center; */
+    
     border-radius: 2px;
 }
 
@@ -329,8 +281,7 @@ ul {
     font-weight: 700;
 }
 
-.hot-and-new .hot,
-.hot-and-new .new {
+.hot-and-new .hot, .hot-and-new .new {
     color: #fff;
     padding: 3px 0;
     width: 100%;
@@ -344,6 +295,113 @@ ul {
     background: #f04e30;
 }
 
+.viewmore {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.viewmore .more {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.viewmore .more:hover {
+    background: #ff7b00;
+}
+
+/* css đoạn đầu */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.product-box .product-box-top {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+}
+
+.product-box {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.container {
+    width: 1170px !important;
+}
+
+.container {
+    position: relative;
+}
+
+.mp-level, .mp-pusher {
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+.mp-pusher {
+    position: relative;
+    left: 0px;
+    height: 100%;
+    z-index: 9999;
+}
+
+.mp-pusher {
+    position: relative;
+    left: 0px;
+    height: 100%;
+    z-index: 9999;
+}
+
+.mp-level, .mp-pusher {
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+.mp-level::after, .mp-level::before, .mp-pusher::after {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 0px;
+    height: 0px;
+    content: "";
+    opacity: 0;
+}
+
+.mp-level::after, .mp-pusher::after {
+    background: rgba(0,0,0,.3);
+    -webkit-transition: opacity .3s, width .1s .3s, height .1s .3s;
+    -moz-transition: opacity .3s, width .1s .3s, height .1s .3s;
+    transition: opacity .3s, width .1s .3s, height .1s .3s;
+}
+
+body {
+    font-size: 14px;
+    font-family: Arial;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+}
+
 .product-box .product-box-top .product-category {
     float: left;
     width: 87%;
@@ -354,8 +412,7 @@ ul {
     width: 13%;
 }
 
-.product-box .product-box-top .product-category #go_phone_made,
-.product-box .product-box-top .sort-price #order_phone {
+.product-box .product-box-top .product-category #go_phone_made, .product-box .product-box-top .sort-price #order_phone {
     border: none;
     outline: 0;
     font-size: 14px;
@@ -376,8 +433,17 @@ ul {
     float: left;
 }
 
+ul {
+    list-style: none;
+}
+
 .product-box .product-box-top .product-category li {
     float: left;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
 }
 
 .product-box .product-box-top .product-category li a {

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class=" js csstransforms3d" lang="vi" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="https://ogp.me/ns#"
+    xmlns="https://www.w3.org/1999/xhtml">
+
+<head>
+    <title> </title>
+</head>
+
+<body>
+    <div class="mp-pusher" id="mp-pusher">
+        <header class="header">
+            <div class="header-main v3_header-main">
+                <div class="container">
+                    <div class="v3_header_top v3_diplay_flex">
+                        <div class="v3_logo">
+
+                        </div>
+                        <div class="v3_location">
+                            <p class="v3_location_title">Xem giá, tồn kho tại:</p>
+                            <div class="v3_location-dropdown">
+                                <div class="v3_location-dropdown-title">
+                                    <select class="v3_location_name location_name ">
+                                        <option value="1" selected="">Hà Nội</option>
+                                        <option value="2">TP. Hồ Chí Minh</option>
+                                        <option value="3">Đà Nẵng</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="v3_search">
+                            <form id="form_submit" action="https://mobilecity.vn/tim-kiem" method="post">
+                                <input name="_token" type="hidden" value="IA0CQLqz5TlkYGBiXBcr24ZL2sEjEUHx9nP3YQV0">
+                                <input name="keyword" id="keyword" aria-label="Tìm kiếm sản phẩm..." required=""
+                                    type="text" placeholder="Tìm kiếm sản phẩm ..." autocomplete="off">
+                                <button name="submit" class="btn-search" aria-label="Tìm kiếm sản phẩm" type="submit">
+                                    <div class="all-icon icon-search"></div>
+                                </button>
+                            </form>
+                            <div class="suggest-search">
+                                <ul class="suggest-search-list"></ul>
+                            </div>
+                        </div>
+                        <div class="v3_logs logs">
+                            <div class="v3_btn-action">
+                                <a class="v3_diplay_flex v3_diplay_column" routerLink="/login" rel="nofollow">
+                                    <img width="20" height="20" alt="hình ảnh icon"
+                                        src="https://mobilecity.vn/public/assets/img/icon_login.png" loading="lazy">
+                                    <span id="userName" class="v3_item_title mt-5"
+                                        data-gtm-vis-recent-on-screen99115113_26="1416"
+                                        data-gtm-vis-first-on-screen99115113_26="1416"
+                                        data-gtm-vis-total-visible-time99115113_26="10000"
+                                        data-gtm-vis-has-fired99115113_26="1"> Đăng nhập</span>
+                                </a>
+                            </div>
+                            
+                            <div class="v3_btn-action">
+                                <a class="v3_diplay_flex v3_diplay_column" routerLink="/register" rel="nofollow">
+                                    <img width="20" height="20" alt="hình ảnh icon"
+                                        src="https://mobilecity.vn/public/assets/img/icon_login.png" loading="lazy">
+                                    <span class="v3_item_title mt-5" data-gtm-vis-recent-on-screen99115113_26="1416"
+                                        data-gtm-vis-first-on-screen99115113_26="1416"
+                                        data-gtm-vis-total-visible-time99115113_26="9900"
+                                        data-gtm-vis-has-fired99115113_26="1"> Đăng ký</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="v3_menu_category v3_menu_category_top">
+                            <div class="v3_item-menu">
+                                <a href="https://mobilecity.vn/tin-tuc">
+                                    <span data-gtm-vis-has-fired99115113_26="1"></span>
+                                    Tin tức
+                                </a>
+                            </div>
+                            <div class="v3_item-menu">
+                                <a href="https://mobilecity.vn/event">
+                                    <span data-gtm-vis-has-fired99115113_26="1"></span>
+                                    Events
+                                </a>
+                            </div>
+                            <div class="v3_item-menu">
+                                <a href="https://mobilecity.vn/tra-cuu-bao-hanh">
+                                    <span data-gtm-vis-has-fired99115113_26="1"></span>
+                                    Tra cứu BH
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+              
+                    <div class="v3_header_bottom v3_menu">
+                        <ul class="v3_diplay_flex">
+                          <li class="v3-item-menu" *ngFor="let parent of parentCategories">
+                            <div class="v3_menu_category">
+                              <a class="v3_diplay_flex v3_catgory_bottom" [matMenuTriggerFor]="menu" (click)="setSelectedParentId(parent.categoryId)">
+                                <img width="25" height="25" alt="icon image"
+                                     src="https://mobilecity.vn/public/assets/img/icon_header/smartPhone.png" loading="lazy">
+                                {{ parent.name }}
+                              </a>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      <mat-menu #menu="matMenu">
+                        <ng-container *ngFor="let parent of parentCategories">
+                          <ng-container *ngIf="parent.categoryId === selectedParentId">
+                            <button mat-menu-item *ngFor="let child of getChildCategories(parent.categoryId)">
+                              <a href="#">{{ child.name }}</a>
+                            </button>
+                          </ng-container>
+                        </ng-container>
+                      </mat-menu>
+                      
+                      
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+
+</html>
