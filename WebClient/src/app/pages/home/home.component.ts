@@ -6,6 +6,8 @@ import { ProductBoxComponent } from '../product-box/product-box.component';
 import { HeaderComponent } from '../header/header.component';
 import { SlideComponent } from '../slide/slide.component';
 import { ProductBoxPhuKienComponent } from '../product-box-phu-kien/product-box-phu-kien.component';
+import { IntroCategoryContentComponent } from '../intro-category-content/intro-category-content.component';
+import { FooterComponent } from '../footer/footer.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -16,7 +18,9 @@ import { ProductBoxPhuKienComponent } from '../product-box-phu-kien/product-box-
     ProductBoxComponent,
     HeaderComponent,
     SlideComponent,
-    ProductBoxPhuKienComponent
+    ProductBoxPhuKienComponent,
+    IntroCategoryContentComponent,
+    FooterComponent
   
   ],
   templateUrl: './home.component.html',
