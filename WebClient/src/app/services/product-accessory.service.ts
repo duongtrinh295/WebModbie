@@ -4,10 +4,11 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment.development';
 import { Product } from '../interfaces/product';
 
+
 @Injectable({
   providedIn: 'root',
 })
-export class ProductService {
+export class ProductAccessoryService {
   apiUrl: string = environment.apiUrl;
 
   constructor(private http: HttpClient) {}

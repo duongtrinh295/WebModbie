@@ -5,6 +5,7 @@ import { LoginComponent } from '../login/login.component';
 import { ProductBoxComponent } from '../product-box/product-box.component';
 import { HeaderComponent } from '../header/header.component';
 import { SlideComponent } from '../slide/slide.component';
+import { ProductBoxPhuKienComponent } from '../product-box-phu-kien/product-box-phu-kien.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -14,7 +15,8 @@ import { SlideComponent } from '../slide/slide.component';
     LoginComponent,
     ProductBoxComponent,
     HeaderComponent,
-    SlideComponent
+    SlideComponent,
+    ProductBoxPhuKienComponent
   
   ],
   templateUrl: './home.component.html',

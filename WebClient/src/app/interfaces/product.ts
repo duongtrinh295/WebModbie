@@ -1,4 +1,26 @@
-export interface Product {
+export interface Image {
+    imageId: string;
+    url: string;
+    created_at: string;
+    updated_at: string;
+  }
+  
+  export interface Category {
+    categoryId: string;
+    name: string;
+    parent_id: string | null;
+    created_at: string;
+    updated_at: string;
+  }
+  
+  export interface Type {
+    productTypeId: string;
+    tag: string;
+    created_at: string;
+    updated_at: string;
+  }
+  
+  export interface Product {
     commonProductId: string;
     title: string;
     price: number;
@@ -8,25 +30,9 @@ export interface Product {
     created_at: string;
     updated_at: string;
     code: number;
-    images: {
-      imageId: string;
-      url: string;
-      created_at: string;
-      updated_at: string;
-    };
-    category: {
-      categoryId: string;
-      name: string;
-      parent_id: string;
-      created_at: string;
-      updated_at: string;
-    };
-    type: {
-      productTypeId: string;
-      tag: string;
-      created_at: string;
-      updated_at: string;
-    };
+    images: Image;
+    category: Category;
+    type: Type;
     subs: any[];
   }
   
