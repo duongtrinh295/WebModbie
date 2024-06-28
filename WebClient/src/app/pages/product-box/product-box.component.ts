@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../interfaces/product';
+
 
 @Component({
   selector: 'app-product-box',
-  standalone: true,
-  imports: [],
   templateUrl: './product-box.component.html',
-  styleUrl: './product-box.component.css'
+  styleUrls: ['./product-box.component.css']
 })
-export class ProductBoxComponent {
+export class ProductBoxComponent implements OnInit {
+  products: Product[] = [];
 
+  constructor(private productService: ProductService) { }
+
+  ngOnInit(): void {
+    this.productService.getProducts().subscribe((data: { count: number, products: Product[] }) => {
+      this.products = data.products;
+    });
+  }
 }
