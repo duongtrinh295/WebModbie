@@ -1,0 +1,105 @@
+<div class="m-10 rounded-md p-3">
+    <h1 class="text-2xl font-semibold">Category Management</h1>
+    <hr class="my-3">
+  
+    <form class="grid grid-cols-6 gap-4" [formGroup]="categoryForm" (ngSubmit)="addCategory()">
+      <div class="flex w-full col-start-1 col-end-4">
+        <div>
+          <div class="my-3">
+            <h1 class="font-medium">Create Category</h1>
+            <mat-form-field class="w-full mt-3">
+              <mat-label>Category Name</mat-label>
+              <input matInput formControlName="name" placeholder="Category Name">
+            </mat-form-field>
+            <span class="text-base text-red-500">{{ errorMessage }}</span>
+            <button type="submit" [disabled]="categoryForm.invalid" class="bg-purple-600 px-4 disabled:bg-purple-400 rounded-md text-white py-2 m-2">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full col-start-4 col-end-8">
+        <div>
+          <div class="my-3">
+            <h1 class="font-medium">Create Category</h1>
+            <mat-form-field class="w-full mt-3">
+              <mat-label>Category Name</mat-label>
+              <input matInput formControlName="name" placeholder="Category Name">
+            </mat-form-field>
+            <mat-form-field class="w-full mt-3">
+              <mat-label>Parent ID</mat-label>
+              <input matInput formControlName="parent_id" placeholder="Parent ID">
+            </mat-form-field>
+            <span class="text-base text-red-500">{{ errorMessage }}</span>
+            <button type="submit" [disabled]="categoryForm.invalid" class="bg-purple-600 px-4 disabled:bg-purple-400 rounded-md text-white py-2 m-2">Add</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  
+    <div class="grid grid-cols-2 gap-4 p-5 my-3">
+      <!-- First List Categories Table -->
+      <div>
+        <h1 class="font-medium">List Categories with Parent</h1>
+        <table class="text-left w-full border">
+          <thead>
+            <tr class="px-5">
+              <th class="border p-2">ID</th>
+              <th class="border p-2">Name</th>
+              <th class="border p-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let category of categoriesWithParent$ | async; index as i; trackBy: trackByCategoryId" class="border-b">
+              <td class="border p-3">{{ category.categoryId}}</td>
+              <td class="border p-3">{{ category.name }}</td>
+              <td class="border p-3 flex items-center gap-2">
+                <div>
+                  <button [routerLink]="['/category-edit', category.categoryId]">
+                    <mat-icon class="cursor-pointer text-blue-600">edit</mat-icon>
+                  </button>
+                </div>
+                <div>
+                  <button [routerLink]="['/category-delete', category.categoryId]">
+                    <mat-icon class="cursor-pointer text-red-600">delete</mat-icon>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <!-- Second List Categories Table -->
+      <div>
+        <h1 class="font-medium">List All Categories</h1>
+        <table class="text-left w-full border">
+          <thead>
+            <tr class="px-5">
+              <th class="border p-2">ID</th>
+              <th class="border p-2">Name</th>
+              <th class="border p-2">Parent ID</th>
+              <th class="border p-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let category of categories$ | async; index as i; trackBy: trackByCategoryId" class="border-b">
+              <td class="border p-3">{{ i + 1 }}</td>
+              <td class="border p-3">{{ category.name }}</td>
+              <td class="border p-3">{{ category.parent_id }}</td>
+              <td class="border p-3 flex items-center gap-2">
+                <div>
+                  <button [routerLink]="['/category-edit', category.categoryId]">
+                    <mat-icon class="cursor-pointer text-blue-600">edit</mat-icon>
+                  </button>
+                </div>
+                <div>
+                  <button (click)="deleteCategory(category.categoryId)">
+                    <mat-icon class="cursor-pointer text-red-600">delete</mat-icon>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

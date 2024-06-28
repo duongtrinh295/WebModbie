@@ -1,0 +1,44 @@
+<form [formGroup]="productTypeForm" (ngSubmit)="addProductType()">
+    <div class="p-5 my-3">
+      <h1 class="font-medium">Add Product Type</h1>
+      <mat-form-field class="w-full">
+        <mat-label>Tag</mat-label>
+        <input matInput formControlName="tag" placeholder="Tag">
+      </mat-form-field>
+      <span class="text-base text-red-500">{{ errorMessage }}</span>
+      <button type="submit" [disabled]="productTypeForm.invalid" class="bg-purple-600 px-4 disabled:bg-purple-400 rounded-md text-white py-2 m-2">Add</button>
+    </div>
+  </form>
+
+ 
+<div class="p-5 my-3">
+    <h1 class="font-medium">List of Product Types</h1>
+    <table class="text-left w-full border">
+      <thead>
+        <tr class="px-5">
+          <th class="border p-2">ID</th>
+          <th class="border p-2">Name prodcut type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let productType of productTypes; index as i" class="border-b">
+          <td class="border p-3">{{ i + 1 }}</td>
+          <td class="border p-3">{{ productType.tag }}</td>
+          <td class="border p-3 flex items-center gap-5">
+            <div>
+                <button [routerLink]="['/product-type-edit', productType.productTypeId]"> <!-- Nút Edit -->
+                  <mat-icon class="cursor-pointer text-blue-600">edit</mat-icon>
+                </button>
+              </div>
+            <div>
+                <button [routerLink]="['/product-type-delete', productType.productTypeId]">
+                  <mat-icon class="cursor-pointer text-red-600">delete</mat-icon>
+                </button>
+              </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
