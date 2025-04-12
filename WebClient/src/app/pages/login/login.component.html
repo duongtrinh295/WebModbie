@@ -1,29 +1,26 @@
-<div class="flex items-center flex-col pt-56 h-screen">
-    <div class="h-screen">
-      <h1 class="text-4xl text-center font-bold my-10">Welcome to
-        <span class="text-5xl text-green-800">MyApp</span>
-      </h1>
-  
-      <div class="flex flex-col items-center gap-5 justify-center">
-    
-          <h1 class="text-2xl">trang login</h1>
-        
-      </div>
-      
-      </div>
-      <a routerLink="/forget-password">Forgot Password?</a>
+<div class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email">
+      <mat-error *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        Valid email is required
+      </mat-error>
+    </mat-form-field>
 
-      <a routerLink="/">
-        <button type="submit" 
-            class="w-full mt-4 border border-slate-200 rounded-md disabled:bg-purple-400 py-2 px-3 bg-purple-700 text-white font-bold">
-            Login
-        </button>
-      </a>
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+        Password is required
+      </mat-error>
+    </mat-form-field>
 
-        <div class="my-5">
-            <span class="text-slate-600">
-                Don't have an account?
-            </span>
-            <a class="text-purple-700" [routerLink]="['/register']">Register</a>
-        </div>
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Login</button>
+  </form>
+  <a routerLink="/register">Don't have an account? Register here</a>
 </div>

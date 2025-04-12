@@ -1,0 +1,47 @@
+<div class="mp-pusher" id="mp-pusher">
+    <section class="container">
+      <section class="product-box">
+        <div class="product-box-top">
+          <div class="product-category accessories-category">
+            <p>Phụ kiện</p>
+            <div class="product-category-list">
+              <ul>
+                <li><a href="https://mobilecity.vn/phu-kien-tai-nghe">Tai nghe Bluetooth - Loa</a></li>
+                <li><a href="https://mobilecity.vn/phu-kien-do-choi-cong-nghe">Đồ chơi công nghệ</a></li>
+                <li><a href="https://mobilecity.vn/phu-kien-dong-ho-thong-minh">Đồng hồ thông minh</a></li>
+                <li><a href="https://mobilecity.vn/phu-kien-pin-sac-du-phong">Pin sạc dự phòng</a></li>
+                <li><a href="https://mobilecity.vn/phu-kien-iphone">Phụ kiện iPhone</a></li>
+                <li><a href="https://mobilecity.vn/phu-kien-xiaomi">Phụ kiện Xiaomi</a></li>
+                <li><a href="https://mobilecity.vn/phu-kien-realme">Phụ kiện Realme</a></li>
+                <li><a href="https://mobilecity.vn/phu-kien-may-loc-khong-khi">Máy lọc không khí</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="product-list">
+          <div *ngFor="let product of filteredProducts" class="accessories-list-item">
+            <div class="accessories-item-image">
+              <img width="80" height="80" class="lazy link_name" [alt]="product.title" [src]="product.images.url">
+            </div>
+            <div class="accessories-item-info">
+              <p class="name">
+                <a [title]="product.title" [routerLink]="productLink(product)">
+                  {{ product.title }}
+                </a>
+              </p>
+              <div class="accessories-item-left">
+                <p class="price">{{ product.price | currency:'VND':'symbol':'1.0-0' }}</p>
+              </div>
+              <div class="accessories-item-right">
+                <span class="buy link_name" [routerLink]="productLink(product)">Mua</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="viewmore">
+          <a class="more" href="javascript:;" data-count="16" data-type="fits">Xem thêm Phụ kiện</a>
+        </div>
+      </section>
+    </section>
+  </div>
+  

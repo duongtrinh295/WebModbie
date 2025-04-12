@@ -1,0 +1,395 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+footer {
+    width: 100%;
+    background: #fafafa;
+    padding: 0;
+    float: left;
+    margin-top: 10px;
+}
+
+.mp-level,
+.mp-pusher {
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+.mp-pusher {
+    position: relative;
+    left: 0px;
+    height: 100%;
+    z-index: 9999;
+}
+
+.mp-pusher {
+    position: relative;
+    left: 0px;
+    height: 100%;
+    z-index: 9999;
+}
+
+.mp-level,
+.mp-pusher {
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+.mp-level::after,
+.mp-level::before,
+.mp-pusher::after {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 0px;
+    height: 0px;
+    content: "";
+    opacity: 0;
+}
+
+.mp-level::after,
+.mp-pusher::after {
+    background: rgba(0, 0, 0, .3);
+    -webkit-transition: opacity .3s, width .1s .3s, height .1s .3s;
+    -moz-transition: opacity .3s, width .1s .3s, height .1s .3s;
+    transition: opacity .3s, width .1s .3s, height .1s .3s;
+}
+
+body {
+    font-size: 14px;
+    font-family: Arial;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+/* @media only screen and (min-width:1200px) */
+.container {
+    width: 1170px !important;
+}
+
+.container {
+    position: relative;
+}
+
+.footer-bottom {
+    width: 100%;
+    margin-top: 10px;
+    background: #e1e1e1;
+    font-size: 14px;
+    color: #58595b;
+}
+
+.footer-bottom-item {
+    float: left;
+    width: 40%;
+}
+
+:last-child.footer-bottom-item {
+    width: 20%;
+}
+
+.footer-bottom-item p {
+    float: left;
+    padding: 15px 0;
+}
+
+:last-child.footer-bottom-item p {
+    text-align: right;
+    width: 100%;
+}
+
+.all-icon {
+    
+    background-repeat: no-repeat;
+    transition-delay: 3s;
+    transition-duration: 3s;
+}
+
+.icon-bank {
+    width: 100px;
+    height: 26px;
+    background-position: -300px -23px;
+    float: left;
+    margin: 7px 0 0 20px;
+}
+
+.icon-norton {
+    width: 150px;
+    height: 80px;
+    float: right;
+    background-position: -154px -83px;
+}
+
+.icon-notification {
+    width: 153px;
+    float: right;
+    height: 59px;
+    margin: 10px 0 0 0;
+    background-position: 0 -83px;
+}
+
+.icon-connect {
+    width: 18px;
+    height: 20px;
+    float: left;
+    margin: -2px 5px 5px 0;
+    background-position: -210px -22px;
+}
+
+.icon-email {
+    width: 26px;
+    height: 17px;
+    float: left;
+    margin: -2px 5px 5px 0;
+    background-position: -312px 0;
+}
+
+.icon-policy {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: -2px 5px 5px 0;
+    background-position: -218px 0;
+}
+
+.icon-location {
+    width: 17px;
+    height: 24px;
+    background-position: -337px 0;
+    float: left;
+    margin: -2px 5px 5px 0;
+}
+
+.all-icon {
+   
+    background-repeat: no-repeat;
+    transition-delay: 3s;
+    transition-duration: 3s;
+}
+
+.icon-bank {
+    width: 100px;
+    height: 26px;
+    background-position: -300px -23px;
+    float: left;
+    margin: 7px 0 0 20px;
+}
+
+.footer-top {
+    width: 100%;
+    float: left;
+}
+
+.footer-top .footer-top-item {
+    width: 27%;
+    float: left;
+    padding: 30px 10px 0 0;
+}
+
+.footer-top :last-child.footer-top-item {
+    width: 19%;
+    padding-right: 0px;
+    margin: 40px 0 0 0;
+}
+
+.footer-top-content {
+    float: left;
+    width: 100%;
+}
+
+.icon-footer {
+    float: left;
+    width: 100%;
+}
+
+.icon-norton {
+    width: 150px;
+    height: 80px;
+    float: right;
+    background-position: -154px -83px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.icon-notification {
+    width: 153px;
+    float: right;
+    height: 59px;
+    margin: 10px 0 0 0;
+    background-position: 0 -83px;
+}
+
+.footer-top .footer-top-item .title {
+    padding: 7px 0;
+    font-size: 16px;
+    color: #c69a39;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.connect-content {
+    float: left;
+}
+
+.connect-content .connect-content-item a {
+    text-decoration: none;
+    width: 100%;
+    clear: both;
+    margin-top: 5px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.connect-content .connect-content-item span {
+    font-size: 14px;
+    color: #000;
+    text-transform: capitalize;
+    display: block;
+    margin: 3px 0 0 5px;
+}
+
+.icon-connect {
+    width: 18px;
+    height: 20px;
+    float: left;
+    margin: -2px 5px 5px 0;
+    background-position: -210px -22px;
+}
+
+.subscribe-form {
+    width: 100%;
+    margin: 10px 0 30px 0;
+    float: left;
+}
+
+.subscribe-form #subscribe-email {
+    border: 1px solid #bcbec0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    width: 170px;
+    height: 27px;
+    padding: 5px;
+    float: left;
+    font-size: 13px;
+}
+
+.subscribe-form #subscribe-btn {
+    width: 55px;
+    height: 27px;
+    background: #c69a39;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    float: left;
+    margin: 0 0 0 5px;
+    cursor: pointer;
+}
+
+.icon-email {
+    width: 26px;
+    height: 17px;
+    float: left;
+    margin: -2px 5px 5px 0;
+    background-position: -312px 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer-list li {
+    list-style: none;
+    margin-left: 20px;
+    position: relative;
+}
+
+.footer-list li::before {
+    content: "";
+    background-color: #acacac;
+    margin: 0 10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: 14px;
+    left: -25px;
+}
+
+.footer-list li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+    padding: 8px 0;
+    display: inline-block;
+}
+
+.icon-policy {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: -2px 5px 5px 0;
+    background-position: -218px 0;
+}
+
+.address-group {
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.address-group .address-group-title {
+    font-size: 15px;
+    color: #333;
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+
+.address-group .address-group-main .address-group-item {
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+.address-group .address-group-main .address-group-item address {
+    font-style: normal;
+    padding: 0 0 3px 0;
+}
+
+.address-group .address-group-main .address-group-item a {
+    color: #222;
+}
+
+.address-group .address-group-main .address-group-item address a {
+    color: #c69a39;
+    margin-left: 5px;
+    padding-left: 5px;
+    border-left: 1px solid #c69a39;
+}
+
+.icon-location {
+    width: 17px;
+    height: 24px;
+    background-position: -337px 0;
+    float: left;
+    margin: -2px 5px 5px 0;
+}
